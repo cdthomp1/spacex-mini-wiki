@@ -4,23 +4,23 @@ import { getAstronauts, getDragons, getLaunches, getRockets,  } from "../utils/u
 const Home = ({ rockets, launches, astronauts, dragons }) => {
   return (
     <>
-      <h1 className="text-center text-white text-5xl p-5 font-goldman">SpaceX MiniWiki</h1>
+      <h1 className="text-center text-white text-8xl p-5 font-barcode">SpaceX MiniWiki</h1>
       <div className="w-11/12 mx-auto">
-        <h2 className="text-center text-white text-4xl p-5">Rockets</h2>
-        <div className="flex">
-          {rockets.map(rocket => (<Card document={rocket} />))}
+        <h2 className="text-center font-goldman text-white text-4xl p-5">Rockets</h2>
+        <div className="flex flex-wrap gap-x-4">
+          {rockets.map((rocket, index) => (<Card key={index} document={rocket} />))}
         </div>
-        <h2 className="text-center text-white text-4xl p-5">Astronauts</h2>
-        <div className="flex">
-          {astronauts.map(astro => (<Card document={astro} />))}
+        <h2 className="text-center font-goldman text-white text-4xl p-5">Astronauts</h2>
+        <div className="flex flex-wrap gap-x-4">
+          {astronauts.map((astro, index) => (<Card key={index} document={astro} />))}
         </div>
-        <h2 className="text-center text-white text-4xl p-5">Launches</h2>
-        <div className="flex">
-          {launches.map(launch => (<Card document={launch} />))}
+        <h2 className="text-center font-goldman text-white text-4xl p-5">Launches</h2>
+        <div className="flex flex-wrap gap-x-4">
+          {launches.map((launch, index) => (<Card key={index} document={launch} />))}
         </div>
-        <h2 className="text-center text-white text-4xl p-5">Dragons</h2>
-        <div className="flex justify-around">
-          {dragons.map(dragon => (<Card document={dragon} />))}
+        <h2 className="text-center font-goldman text-white text-4xl p-5">Dragons</h2>
+        <div className="flex flex-wrap gap-x-4">
+          {dragons.map((dragon, index) => (<Card key={index}document={dragon} />))}
         </div>
       </div>
     </>
@@ -29,7 +29,6 @@ const Home = ({ rockets, launches, astronauts, dragons }) => {
 
 export async function getStaticProps() {
 
-  
   let rockets = await getRockets();
 
   let astronauts = await getAstronauts();
@@ -39,9 +38,6 @@ export async function getStaticProps() {
 
   let launches = await getLaunches();
   launches = launches.slice(0,4)
-
-
-
 
   return {
     props: {

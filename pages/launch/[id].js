@@ -26,7 +26,7 @@ const launch = ({ launch }) => {
                 <iframe width="560" height="315" src={youtubeLink} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
 
-            {images.length > 0 ? (<><h2 className="text-4xl">Images From Launch</h2><ImageGallery lazyLoad={true} items={images} /></>) : <p>No images available of launch</p>}
+            {images.length > 0 ? (<><h2 className="text-4xl">Images From Launch</h2><div className="overflow-hidden w-10/12"><ImageGallery lazyLoad={true} items={images} /></div></>) : <p>No images available of launch</p>}
         </div>
     )
 }

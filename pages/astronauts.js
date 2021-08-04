@@ -5,7 +5,7 @@ import { getAstronauts } from '../utils/utils'
 const astronauts = ({ astronauts }) => {
     return (
         <>  
-        <h1 className="text-center text-white text-8xl p-5 font-barcode">SpaceX Astronauts</h1>
+        <h1 className="text-center text-white xl:text-9xl md:text-9xl sm:text-9xl text-5xl p-5 font-barcode">SpaceX Astronauts</h1>
             <div className="w-11/12 mx-auto flex flex-wrap gap-x-4">
                 {astronauts.map((astronaut, index) => (<Card key={index} document={astronaut} />))}
             </div>

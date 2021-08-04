@@ -10,7 +10,7 @@ const rockets = ({ rockets }) => {
         <div className="text-white flex flex-col items-center w-7/12 mx-auto space-y-6">
             <h1 className="text-center text-white text-8xl p-5 font-barcode">SpaceX Rockets</h1>
             <div className="w-11/12 mx-auto flex flex-wrap gap-x-4">
-                {rockets.map(rocket => (<Card document={rocket} />))}
+                {rockets.map((rocket, index) => (<Card key={index} document={rocket} />))}
             </div>
         </div>
     )
