@@ -6,6 +6,7 @@ module.exports = {
       dropShadow: {
         'greenDrop': '5px 5px 0px #1FAF7B',
         'blackDrop': '5px 5px 0px #000000',
+        'greenShadow': '0 0 10px #1FAF7B'
       },
       backgroundColor: theme => ({
         ...theme('colors'),
@@ -15,7 +16,8 @@ module.exports = {
         'bgMain': '#aaa9a9'
       }),
       fontFamily: {
-        'goldman': ['"Goldman"', 'cursive']
+        'goldman': ['"Goldman"', 'cursive'],
+        'barcode': ['"Libre Barcode 39 Text"', 'cursive']
       }
 
     },

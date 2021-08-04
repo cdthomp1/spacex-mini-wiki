@@ -1,19 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 
-const rocket = ({rocket}) => {
+const dragon = ({capsule}) => {
     return (
         <div className="text-white">
-            <h1>{rocket.name}</h1>
-            <p>{rocket.description}</p>
-            <p>Engine Type: {rocket.engines.type}</p>
-            <p>Engine Count: {rocket.engines.number}</p>
-            <p>Engine Layout: {rocket.engines.layout}</p>
-            <p>Engine Thrust to Weight: {rocket.engines.thrust_to_weight}</p>
-            <p>Engine Prop 1: {rocket.engines.propellant_1}</p>
-            <p>Engine Prop 2: {rocket.engines.propellant_2}</p>
-            
-            {rocket.flickr_images.map(image => (<img src={image} layout="fill" alt="Rocket Image" />))}
+            <h1>{capsule.name}</h1>
+        
         </div>
     )
 }
@@ -23,19 +15,19 @@ export async function getServerSideProps(context) {
 
     const { id } = context.query;
 
-    var res = await fetch('https://api.spacexdata.com/v4/rockets/' + id);
-    const rocket = await res.json();
-    // console.log(rocket)
+    var res = await fetch('https://api.spacexdata.com/v4/dragons/' + id);
+    const capsule = await res.json();
+    // console.log(capsule)
 
 
 
 
     return {
         props: {
-            rocket
+            capsule
         },
     }
 }
 
 
-export default rocket
+export default dragon

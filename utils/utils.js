@@ -1,5 +1,10 @@
 export async function getRockets() {
     const resRockets = await fetch('https://api.spacexdata.com/v4/rockets')
+    if(resRockets.status !== 200) {
+        return {
+            message: "Error Getting Rockets"           
+        }
+    }
     const rocketsData = await resRockets.json()
 
     let rockets = rocketsData.map(rocket => {
