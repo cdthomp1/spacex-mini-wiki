@@ -12,7 +12,7 @@ const launch = ({ launch }) => {
     const youtubeLink = `https://www.youtube-nocookie.com/embed/${launch.links.youtube_id}`
     return (
         <div className="text-white flex flex-col items-center w-7/12 mx-auto space-y-6 ">
-            <h1 className="text-9xl mt-10 font-barcode text-center"><a href={launch.links.wikipedia} target="_blank" rel="noreferrer noopener">{launch.name}</a></h1>
+            <h1 className="text-center text-white xl:text-9xl md:text-9xl sm:text-9xl text-5xl p-5 font-barcode"><a href={launch.links.wikipedia} target="_blank" rel="noreferrer noopener">{launch.name}</a></h1>
             <div className="filter w-96 drop-shadow-greenShadow">
                 <img src={launch.links.patch.large} />
             </div>
@@ -23,7 +23,8 @@ const launch = ({ launch }) => {
                 <h3 className="text-3xl">Details: </h3>
                 <p className="text-xl">{launch.details}</p>
                 <h3 className="text-3xl">Webcast: </h3>
-                <iframe width="560" height="315" src={youtubeLink} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe src={youtubeLink} width="560" height="315" title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
             </div>
 
             {images.length > 0 ? (<><h2 className="text-4xl">Images From Launch</h2><div className="overflow-hidden w-10/12"><ImageGallery lazyLoad={true} items={images} /></div></>) : <p>No images available of launch</p>}
